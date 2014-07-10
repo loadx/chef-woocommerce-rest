@@ -1,0 +1,100 @@
+DEPENDENCIES
+  apache2
+  apt
+  build-essential
+  database
+  deb_pkg_unautostart
+  hostsfile
+  ntp
+  php
+  timezone-ii
+  wordpress
+    path: cookbooks/wordpress
+  wrap-apache
+    path: cookbooks/wrap-apache
+  wrap-mysql
+    path: cookbooks/wrap-mysql
+  wrap-php
+    path: cookbooks/wrap-php
+  wrap-postfix
+    path: cookbooks/wrap-postfix
+  wrap-proxy
+    path: cookbooks/wrap-proxy
+  wrap-time
+    path: cookbooks/wrap-time
+
+GRAPH
+  apache2 (1.10.4)
+    iptables (>= 0.0.0)
+    logrotate (>= 0.0.0)
+    pacman (>= 0.0.0)
+  apt (2.4.0)
+  aws (2.3.0)
+  build-essential (2.0.4)
+  chef-sugar (2.0.0)
+  chef_handler (1.1.6)
+  database (2.2.0)
+    aws (>= 0.0.0)
+    mysql (>= 5.0.0)
+    mysql-chef_gem (>= 0.0.0)
+    postgresql (>= 1.0.0)
+    xfs (>= 0.0.0)
+  deb_pkg_unautostart (0.1.0)
+  hostsfile (2.4.5)
+  iis (2.1.2)
+    windows (>= 1.2.6)
+  iptables (0.13.2)
+  logrotate (1.6.0)
+  mysql (5.3.6)
+    yum-mysql-community (>= 0.0.0)
+  mysql-chef_gem (0.0.2)
+    build-essential (>= 0.0.0)
+    mysql (>= 0.0.0)
+  ntp (1.6.4)
+  openssl (2.0.0)
+    chef-sugar (>= 0.0.0)
+  pacman (1.1.1)
+  php (1.4.6)
+    build-essential (>= 0.0.0)
+    iis (>= 0.0.0)
+    mysql (>= 0.0.0)
+    windows (>= 0.0.0)
+    xml (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  postfix (3.3.1)
+  postgresql (3.4.1)
+    apt (>= 1.9.0)
+    build-essential (>= 0.0.0)
+    openssl (>= 0.0.0)
+  timezone-ii (0.2.0)
+  ubuntu (1.1.6)
+    apt (>= 0.0.0)
+  windows (1.31.0)
+    chef_handler (>= 0.0.0)
+  wordpress (0.1.0)
+    apache2 (>= 0.0.0)
+    database (>= 0.0.0)
+    hostsfile (>= 0.0.0)
+  wrap-apache (0.1.0)
+    apache2 (>= 0.0.0)
+  wrap-mysql (0.1.0)
+    database (>= 0.0.0)
+    mysql (>= 0.0.0)
+  wrap-php (0.1.0)
+    php (>= 0.0.0)
+  wrap-postfix (0.1.0)
+    postfix (>= 0.0.0)
+  wrap-proxy (0.1.0)
+    ubuntu (>= 0.0.0)
+  wrap-time (0.1.0)
+    ntp (>= 0.0.0)
+    timezone-ii (>= 0.0.0)
+  xfs (1.1.0)
+  xml (1.2.6)
+    build-essential (>= 0.0.0)
+    chef-sugar (>= 0.0.0)
+  yum (3.0.6)
+  yum-epel (0.3.6)
+    yum (~> 3.0)
+  yum-mysql-community (0.1.8)
+    yum (>= 3.0.0)

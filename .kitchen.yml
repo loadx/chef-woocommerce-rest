@@ -1,0 +1,30 @@
+driver_plugin: vagrant
+platforms:
+  - name: woo-ubuntu-12.04
+    driver_config:
+      require_chef_omnibus: true
+      box: ubuntu_12.04
+      box_url: /Users/loadx/DMGs/VBoxes/ubuntu-12.04.box
+      network:
+        - ["forwarded_port", {guest: 8080, host: 8080}]
+        - ["private_network", {ip: 33.33.33.10}]
+      customize:
+        memory: 512
+      synced_folders:
+        - ["/Users/loadx/vms/chef-woo/src", "/fs/wordpress"]
+    roles_path: "roles"
+    data_bags_path: "data_bags"
+
+suites:
+  - name: web_and_db
+    roles_path: roles
+    data_bags_path: data_bags
+    run_list:
+      - recipe[wrap-proxy]
+      - recipe[apt]
+      - recipe[wrap-time]
+      - recipe[wrap-postfix]
+      - recipe[wrap-mysql]
+      - recipe[wrap-php]
+      - recipe[wrap-apache]
+      - recipe[wordpress]
