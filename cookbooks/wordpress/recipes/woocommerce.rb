@@ -28,5 +28,9 @@ api_values.each do |key,val|
     cwd node['wordpress']['dir']
     user node['wordpress']['install']['user']
     group node['wordpress']['install']['group']
+    not_if "#{cli} user meta get 1 #{key} | grep #{val}",
+      :cwd => node['wordpress']['dir'],
+      :user => node['wordpress']['install']['user'],
+      :group => node['wordpress']['install']['group']
   end
 end
