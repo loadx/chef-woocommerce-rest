@@ -6,7 +6,6 @@ platforms:
       box: ubuntu_12.04
       box_url: /Users/loadx/DMGs/VBoxes/ubuntu-12.04.box
       network:
-        - ["forwarded_port", {guest: 8080, host: 8080}]
         - ["private_network", {ip: 33.33.33.10}]
       customize:
         memory: 512

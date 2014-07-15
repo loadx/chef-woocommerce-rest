@@ -1,5 +1,5 @@
 # -*- mode: ruby -*-
-source "https://api.berkshelf.com"
+source "https://supermarket.getchef.com"
 
 upstream_cookbooks = [
   'apache2',
@@ -10,7 +10,7 @@ upstream_cookbooks = [
   'php',
   'ntp',
   'timezone-ii',
-  'hostsfile',
+  'hostsfile'
 ].each do |up_cb|
   cookbook up_cb
 end
