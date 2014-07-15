@@ -54,7 +54,7 @@ execute "generate config.php" do
   user node['wordpress']['install']['user']
   group node['wordpress']['install']['group']
   not_if { File.exists?(wp_config) }
-  notifies :run, "execute[install wordpress]", :delayed
+  # notifies :run, "execute[install wordpress]", :delayed
 end
 
 execute "install wordpress" do
@@ -71,7 +71,6 @@ execute "install wordpress" do
     :cwd => node['wordpress']['dir'],
     :user => node['wordpress']['install']['user'],
     :group => node['wordpress']['install']['group']
-  action :nothing
 end
 
 uploads_dir = File.join(node['wordpress']['dir'], 'wp-content/uploads')
