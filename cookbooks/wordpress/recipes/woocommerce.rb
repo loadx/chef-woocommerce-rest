@@ -27,7 +27,6 @@ wp_settings.each do |key,val|
       :cwd => node['wordpress']['dir'],
       :user => node['wordpress']['install']['user'],
       :group => node['wordpress']['install']['group']
-
   end
 end
 
@@ -47,4 +46,12 @@ api_values.each do |key,val|
       :user => node['wordpress']['install']['user'],
       :group => node['wordpress']['install']['group']
   end
+end
+
+htaccess_location = File.join(node['wordpress']['dir'], '.htaccess')
+cookbook_file htaccess_location do
+  source "htaccess"
+  user node['wordpress']['install']['user']
+  group node['wordpress']['install']['group']
+  mode "0755"
 end
