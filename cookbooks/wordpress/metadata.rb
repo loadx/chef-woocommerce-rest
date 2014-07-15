@@ -9,3 +9,4 @@ version          '0.1.0'
 depends "apache2"
 depends "hostsfile"
 depends "database"
+depends "selfsigned_certificate"
